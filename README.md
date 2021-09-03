@@ -59,7 +59,7 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * [1] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
 * [1] Fill out code necessary to test that that Checkout form renders without errors.
 * [1] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
-* [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
+* [1] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
 **Notes:**
 * Again, unlike other projects, the local server used here can not be accessed through the browser. For this and the rest of your sprint challenges, test the functioning of the server directly through your axios calls.
