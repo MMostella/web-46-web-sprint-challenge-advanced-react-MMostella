@@ -56,9 +56,9 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 * [1] You built a useForm hook in the guided project this week. You will probably need to use that as a guide to complete this step. However, try and build it out first before you peek at the guided project. And *do not* copy/paste directly from the guided project!_
 
 #### Testing the Checkout Form
-* [ ] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
-* [ ] Fill out code necessary to test that that Checkout form renders without errors.
-* [ ] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
+* [1] Run the test runner and ensure that `src/components/CheckoutForm.test.js` is correctly called.
+* [1] Fill out code necessary to test that that Checkout form renders without errors.
+* [1] Fill out code necessary to test that when all form inputs are filled with valid data, a success message appears.
 * [ ] Make sure the tests are passing, and make sure you can cause the tests to fail purposefully, so that you know the tests are truly working.
 
 **Notes:**
@@ -93,19 +93,33 @@ You will also need to build the two tests in the `CheckoutForm.test.js` file and
 
 ## Submission format
 
-* [ ] Submit via Codegrade by commiting and pushing any new changes.
-* [ ] Check codegrade for automated feedback.
-* [ ] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
+* [1] Submit via Codegrade by commiting and pushing any new changes.
+* [1] Check codegrade for automated feedback.
+* [1] Check codegrade on Monday following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [1] Any changes pushed to your <firstName-lastName> branch will resubmited to codegrade if pushed before the sprint challenge deadline. Changes after the deadline will not be reviewed.
 
 ## Interview Questions
 
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Add your answers to the questions within `interview_answers.md` file. These will not be counted as a part of your sprint score but will be helpful for preparing you for your endorsement interview, and enhancing overall understanding.
 
 1. What are the main differences between a stateful and a functional component?
+Stateful commponents Include state within the component. Stateless and functional components do not handle state within the components, typically having a different hook folder with a stateful component included.
 
 2. When does a componentWillMount function be called? What about a componentWillUpdate?
 
+1.componentWillMount is called when the application is first initially rendered. Then it will not mount again.
+
+2.componentWillUpdate is called whenever neew props are passing to the component.
+
 3. Define stateful logic.
+Stateful logic is any code that uses reusable state
 
 4. What are the three step of creating a successful test? What is done in each phase?
+Arrange
+Set up the test case.
+
+Act
+Covers the main things being tested
+
+Assert
+verifies the response
