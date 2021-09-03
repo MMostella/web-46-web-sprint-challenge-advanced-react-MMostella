@@ -1,6 +1,6 @@
 import React from "react";
 import MutationObserver from 'mutationobserver-shim';
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import CheckoutForm from "./CheckoutForm";
 import userEvent from "@testing-library/user-event";
 
@@ -13,7 +13,7 @@ test("renders without errors", () => {
 
 test("shows success message on submit with form details", () => {
     render(<CheckoutForm/>);
-    const firstNameInput = screen.getByLabelText(/first name/i);
+    const firstNameInput = screen.getByLabelText(/first name:/i);
     userEvent.type(firstNameInput, 'Mason');
     const lastNameInput = screen.getByLabelText(/last name:/i);
     userEvent.type(lastNameInput, 'Mostella');
@@ -24,16 +24,16 @@ test("shows success message on submit with form details", () => {
     const stateInput = screen.getByLabelText(/state:/i);
     userEvent.type(stateInput, 'Alabama');
     const zipInput = screen.getByLabelText(/zip:/i);
-    userEvent.type(zipInput, 35951);
+    userEvent.type(zipInput, '35951');
     const button = screen.getByRole('button');
     userEvent.click(button);
 
-    const submitWorked = screen.queryByText('You have ordered some plants! Woo-hoo! 🎉 Your new green friends will be shipped to:');
-    expect(submitWorked).toBeInTheDocument();
-    const nameSubmit = screen.getByText('Mason Mostella');
+    const successfulSubmit = screen.getByTestId('successMessage');
+    expect(successfulSubmit).toBeInTheDocument();
+    const nameSubmit = screen.queryByText('Mason Mostella');
     expect(nameSubmit).toBeInTheDocument();
-    const partOneAddressSubmit = screen.getByText('123 address rd');
-    expect(partOneAddressSubmit).toBeInTheDocument();
-    const partTwoAddressSubmit = screen.getByText('Boaz, Alabama 35951');
-    expect(partTwoAddressSubmit).toBeInTheDocument();
+    const streetSubmit = screen.queryByText('123 address rd');
+    expect(streetSubmit).toBeInTheDocument();
+    const cityStateSubmit = screen.queryByText('Boaz, Alabama 35951');
+    expect(cityStateSubmit).toBeInTheDocument();
 });
